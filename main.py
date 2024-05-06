@@ -1578,7 +1578,7 @@ async def khann(bot: Client, m: Message):
         "user-agent": "Android",
         "randomid": "385bc0ce778e8d0b",
         "client-type": "MOBILE",
-        "device-meta": "{APP_VERSION:19.0,DEVICE_MAKE:Asus,DEVICE_MODEL:ASUS_X00TD,OS_VERSION:6,PACKAGE_NAME:xyz.penpencil.khansirofficial}",
+        "device-meta": "{APP_VERSION:34.0,DEVICE_MAKE:Asus,DEVICE_MODEL:ASUS_X00TD,OS_VERSION:6,PACKAGE_NAME:xyz.penpencil.khansirofficial}",
         "content-type": "application/json; charset=UTF-8",
     }
     params = {
