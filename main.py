@@ -45,103 +45,6 @@ bot = Client(
 print(listen.__file__)
 
 
-# ========== Converter =============#
-@bot.on_message(filters.command(["taiyaric"]))
-async def gaiyrab(bot: Client, message: Message):
-    message.from_user.id if message.from_user is not None else None
-    if not one(message.from_user.id):
-        return await message.reply_text(
-            "✨ Hello Sir,\n\nContact Me Click Below",
-            reply_markup=keyboard,
-        )
-    else:
-        editable = await message.reply_text(
-            "This is help to convert json file to text of taiyari karlo app ",
-            disable_web_page_preview=True,
-        )
-    input = await bot.listen(editable.chat.id)
-    x = await input.download()
-    to_write = ""
-    try:
-        with open(x, "r") as file:
-            data = json.load(file)
-            for entry in data:
-                target_change = entry[1][0].get("targetChange")
-                if target_change and target_change.get("targetChangeType") == "ADD":
-                    continue
-                document_change = (
-                    entry[1][0]
-                    .get("documentChange", {})
-                    .get("document", {})
-                    .get("fields", {})
-                )
-                quality = None
-                recordings = (
-                    document_change.get("recordings", {})
-                    .get("arrayValue", {})
-                    .get("values", [])
-                )
-                for recording in recordings:
-                    recording_fields = recording.get("mapValue", {}).get("fields", {})
-                    quality = recording_fields.get("quality", {}).get("stringValue")
-                    if quality == "480p":
-                        path = recording_fields.get("path", {}).get("stringValue")
-                        title = document_change.get("title", {}).get("stringValue")
-                        to_write += f"{title}:{path}\n"
-                if document_change.get("type", {}).get("stringValue") == "pdf":
-                    title_pdf = document_change.get("title", {}).get("stringValue")
-                    ref_pdf = document_change.get("ref", {}).get("stringValue")
-                    to_write += f"{title_pdf}:{ref_pdf}\n"
-    except Exception as e:
-        os.remove(x)
-        return await message.reply_text(f"**Error** : {e}")
-    with open(f"new.txt", "w", encoding="utf-8") as f:
-        f.write(to_write)
-        print(1)
-    with open(f"new.txt", "rb") as f:
-        await asyncio.sleep(5)
-        doc = await message.reply_document(document=f, caption="Here is your txt file.")
-
-
-# =========== Core Commands ======#
-
-shell_usage = f"**USAGE:** Executes terminal commands directly via bot.\n\n<pre>/shell pip install requests</pre>"
-
-
-@bot.on_message(filters.command(["shell"]))
-async def shell(client, message: Message):
-    """
-    Executes terminal commands via bot.
-    """
-    if not two(message.from_user.id):
-        return
-
-    if len(message.command) < 2:
-        return await message.reply_text(shell_usage, quote=True)
-
-    user_input = message.text.split(None, 1)[1].split(" ")
-
-    try:
-        shell = subprocess.Popen(
-            user_input, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
-
-        stdout, stderr = shell.communicate()
-        result = str(stdout.decode().strip()) + str(stderr.decode().strip())
-
-    except Exception as error:
-        logging.info(f"{error}")
-        return await message.reply_text(f"**Error**:\n\n{error}", quote=True)
-
-    if len(result) > 2000:
-        file = BytesIO(result.encode())
-        file.name = "output.txt"
-        await message.reply_text("Output is too large (Sending it as File)", quote=True)
-        await client.send_document(message.chat.id, file, caption=file.name)
-    else:
-        await message.reply_text(f"**Output:**:\n\n{result}", quote=True)
-
-
 paid_text = """
 » Hello i am online class bot which help you to **Extract** and **Download** video of Physics Wallah / Apni Kaksha / Khan Gs ..... Any Type of Online Class Which You Want.
 • **How to Access this bot**
@@ -196,7 +99,7 @@ async def restart_handler(_, m):
 
 
 # ============ Download Commands ==============#
-@bot.on_message(filters.command(["pyro"]))
+@bot.on_message(filters.command(["txt"]))
 async def download_pw(bot: Client, m: Message):
     global cancel
     m.from_user.id if m.from_user is not None else None
