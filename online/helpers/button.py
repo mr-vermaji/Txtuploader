@@ -5,7 +5,7 @@ keyboard = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(
                 text="Developer",
-                url="https://t.me/pheonixdeathnote",
+                url="https://t.me/official_virendraverma",
             ),
         ],
     ]
