@@ -794,7 +794,7 @@ async def account_ln(bot: Client, m: Message):
                 .values()
             )
 
-            name = f"{str(count).zfill(3)}) {name1}.mkv"
+            name = f"{str(count).zfill(3)}) {name1}"
             Show = (
                 f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n`"
             )
@@ -879,7 +879,7 @@ async def pro_vision(bot: Client, m: Message):
             ).json()["link"]
             cook = None
 
-            name = f"{str(count).zfill(3)}) {name1}.mkv"
+            name = f"{str(count).zfill(3)}) {name1}"
             Show = (
                 f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n`"
             )
@@ -1208,7 +1208,7 @@ async def projwin(bot: Client, m: Message):
             else:
                 url1 = url
 
-            name = f"{str(count).zfill(3)}) {name1}.mkv"
+            name = f"{str(count).zfill(3)}) {name1}"
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
             prog = await m.reply_text(Show)
             cc = f"**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Download BY** :- Group Admin"
