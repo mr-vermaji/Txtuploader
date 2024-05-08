@@ -46,7 +46,7 @@ print(listen.__file__)
 
 
 paid_text = """
-» Hello i am online class bot which help you to **Extract** and **Download** video of Physics Wallah / Apni Kaksha / Khan Gs ..... Any Type of Online Class Which You Want.
+» Hello i am online class bot which help you to **Download** videos and pdf from T**XT FILE**.
 • **How to Access this bot**
 
 Step 1: Click Below on Developer.
@@ -60,7 +60,7 @@ Step 3: Send your Telegram ID From @missrose_bot
 async def account_lstarn(bot: Client, m: Message):
     if not one(m.from_user.id):
         return await m.reply_photo(
-            photo="https://telegra.ph/file/e6d2807b0d3074742fe41.jpg",
+            photo="https://graph.org/file/89210bbddd0c095db6a6b.jpg",
             caption=paid_text,
             reply_markup=keyboard,
         )
@@ -99,7 +99,7 @@ async def restart_handler(_, m):
 
 
 # ============ Download Commands ==============#
-@bot.on_message(filters.command(["txt"]))
+@bot.on_message(filters.command(["txt1"]))
 async def download_pw(bot: Client, m: Message):
     global cancel
     m.from_user.id if m.from_user is not None else None
@@ -419,7 +419,7 @@ async def download_pw(bot: Client, m: Message):
     await m.reply_text("Done")
 
 
-@bot.on_message(filters.command(["patna"]))
+@bot.on_message(filters.command(["txt2"]))
 async def khan_dowbol(bot: Client, m: Message):
     global cancel
     m.from_user.id if m.from_user is not None else None
@@ -794,7 +794,7 @@ async def account_ln(bot: Client, m: Message):
                 .values()
             )
 
-            name = f"{str(count).zfill(3)}) {name1}"
+            name = f"{str(count).zfill(3)}) {name1}.mkv"
             Show = (
                 f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n`"
             )
@@ -879,7 +879,7 @@ async def pro_vision(bot: Client, m: Message):
             ).json()["link"]
             cook = None
 
-            name = f"{str(count).zfill(3)}) {name1}"
+            name = f"{str(count).zfill(3)}) {name1}.mkv"
             Show = (
                 f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n`"
             )
@@ -1208,7 +1208,7 @@ async def projwin(bot: Client, m: Message):
             else:
                 url1 = url
 
-            name = f"{str(count).zfill(3)}) {name1}"
+            name = f"{str(count).zfill(3)}) {name1}.mkv"
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
             prog = await m.reply_text(Show)
             cc = f"**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Download BY** :- Group Admin"
