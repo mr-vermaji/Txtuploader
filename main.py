@@ -64,7 +64,11 @@ async def account_lstarn(bot: Client, m: Message):
             caption=paid_text,
             reply_markup=keyboard,
         )
-    await m.reply_text(start_text)
+    await m.reply_photo
+          photo="https://graph.org/file/89210bbddd0c095db6a6b.jpg",
+          caption=start_text,
+          reply_markup=keyboard,
+)
 
 
 # ========== Global Concel Command ============
