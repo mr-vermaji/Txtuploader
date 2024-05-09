@@ -103,7 +103,7 @@ async def restart_handler(_, m):
 
 
 # ============ Download Commands ==============#
-@bot.on_message(filters.command(["txt1"]))
+@bot.on_message(filters.command(["txt"]))
 async def download_pw(bot: Client, m: Message):
     global cancel
     m.from_user.id if m.from_user is not None else None
