@@ -1397,7 +1397,7 @@ async def account_login(bot: Client, m: Message):
 
             start_time = time.time()
 
-                await m.reply_video(f"{name}.mp4",supports_streaming=True,height=720,width=1280,caption=cc,duration=dur,thumb=thumbnail, progress=progress_bar,progress_args=(reply,start_time) )
+                await m.send_video(f"{name}.mp4",supports_streaming=True,height=720,width=1280,caption=cc,duration=dur,thumb=thumbnail, progress=progress_bar,progress_args=(reply,start_time) )
                 count+=1
                 os.remove(f"{name}.mp4")
 
